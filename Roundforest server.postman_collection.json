@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "849fcd74-bb69-41a5-af10-5d2a5101ade2",
+		"name": "Roundforest server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10427741"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/get/:asin/:locale",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"get",
+						":asin",
+						":locale"
+					],
+					"variable": [
+						{
+							"key": "asin",
+							"value": "B00PBJFA3M"
+						},
+						{
+							"key": "locale",
+							"value": "CA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Seller",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/getBySeller/:sellerName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getBySeller",
+						":sellerName"
+					],
+					"variable": [
+						{
+							"key": "sellerName",
+							"value": "testseller"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Analysis",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/getAnalysis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getAnalysis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"asin\":\"ABCD123456\",\r\n    \"locale\":\"IL\",\r\n    \"price\":\"123.4\",\r\n    \"product_name\":\"my new test product\",\r\n    \"product_link\":\"thereIsNotSpoon.orLink.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/create/:sellerName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"create",
+						":sellerName"
+					],
+					"variable": [
+						{
+							"key": "sellerName",
+							"value": "Guy Sharon"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\":\"123.4\",\r\n    \"product_name\":\"my new test productsss\",\r\n    \"product_link\":\"thereIsNotSpoon.orLink.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/update/:asin/:locale",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"update",
+						":asin",
+						":locale"
+					],
+					"variable": [
+						{
+							"key": "asin",
+							"value": "ABCD123456123"
+						},
+						{
+							"key": "locale",
+							"value": "IL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"products\":[\r\n        {\"asin\":\"ABCD123456\",\r\n        \"locale\":\"IL\"},\r\n        {\"asin\":\"ABCD12345\",\r\n        \"locale\":\"IL\"},\r\n        {\"asin\":\"ABCD1234\",\r\n        \"locale\":\"IL\"},\r\n        {\"asin\":\"ABCD123456345346\",\r\n        \"locale\":\"IL\"},\r\n        {\"asin\":\"AB56345346\"}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CSV upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\":\"https://drive.google.com/file/d/1mAY4GoxPnFDPGwiarqhd1r-Ff91FIYOL/view\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CSV uploadLocal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\":\"testseller_products.csv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/uploadLocal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"uploadLocal"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
